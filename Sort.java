@@ -1,9 +1,22 @@
+
+
 public class Sort {
 
     public static void main(String args[]){
+
         int[] numbers = stringsToInts(args);
-        //System.out.println("max : " +max(numbers));
-        //System.out.println(" : " +avg(numbers));
+        System.out.print("bubbleSortAsc : ");
+        bubbleSortAsc(numbers);
+        for(int i = 0; i < numbers.length; i++){
+            System.out.print(numbers[i]+" ");
+        }
+        System.out.println();
+        // problem here
+        System.out.print("bubbleSortDesc : ");
+        bubbleSortDesc(numbers);
+        for(int i = 0; i < numbers.length; i++){
+            System.out.print(numbers[i]+" ");
+        }
 
     }
 
@@ -16,18 +29,20 @@ public class Sort {
         return ans;
     }
 
-    public int[] bubbleSortAsc(int[] numbers) {
+    public static int[] bubbleSortAsc(int[] numbers) {
 
         int n = numbers.length;
+        int temp;
+        for(int i=0; i < n; i++){
+            for(int j=1; j < (n-i); j++){
+                if(numbers[j-1] > numbers[j]){
+                    //swap elements
+                    temp = numbers[j-1];
+                    numbers[j-1] = numbers[j];
+                    numbers[j] = temp;
+                }
 
-        boolean swapped = false;
-        for (int i = 1; i <= n - 1; i++) {
-            if (numbers[i] > numbers[i + 1]) {
-                /* swap them and remember something changed */
-                swap(numbers[i], numbers[i + 1]);
-                swapped = true;
             }
-            /* swap them and remember something changed */
         }
 
         return numbers;
@@ -36,18 +51,19 @@ public class Sort {
     }
 
 
-    public int[] bubbleSortdesc(int[] numbers) {
+    public static int[] bubbleSortDesc(int[] numbers) {
 
         int n = numbers.length;
-
-        boolean swapped = false;
-        for (int i = 1; (i <= n - 1) & !swapped; i++) {
-            if (numbers[i] < numbers[i + 1]) {
-                /* swap them and remember something changed */
-                swap(numbers[i], numbers[i + 1]);
-                swapped = true;
+        int temp;
+        for (int i = 0; i < ( n - 1 ); i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (numbers[j] < numbers[j+1])
+                {
+                    temp = numbers[j];
+                    numbers[j] = numbers[j+1];
+                    numbers[j+1] = temp;
+                }
             }
-            /* swap them and remember something changed */
         }
 
         return numbers;
@@ -55,11 +71,12 @@ public class Sort {
 
     }
 
-    public void swap(int i, int j){
+    public static void swap(int i, int j){
         int temp;
         temp = i;
-        j= temp;
         i = j;
+        j= temp;
+
     }
 
 }
