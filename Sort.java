@@ -5,26 +5,30 @@ public class Sort {
     public static void main(String args[]){
 
         int[] numbers = stringsToInts(args);
-        System.out.print("bubbleSortAsc : ");
-        bubbleSortAsc(numbers);
-        for(int i = 0; i < numbers.length; i++){
-            System.out.print(numbers[i]+" ");
+        if( args[0].equals("asc")){
+            System.out.print("bubbleSortAsc : ");
+            bubbleSortAsc(numbers);
+            for(int i = 0; i < numbers.length; i++){
+                System.out.print(numbers[i]+" ");
+            }
         }
-        System.out.println();
-        // problem here
-        System.out.print("bubbleSortDesc : ");
-        bubbleSortDesc(numbers);
-        for(int i = 0; i < numbers.length; i++){
-            System.out.print(numbers[i]+" ");
+
+        else{
+            System.out.print("bubbleSortDesc : ");
+            bubbleSortDesc(numbers);
+            for(int i = 0; i < numbers.length; i++){
+                System.out.print(numbers[i]+" ");
+            }
         }
+
 
     }
 
 
     public static int[] stringsToInts(String[] numbers){
-        int ans[] = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++){
-            ans[i] = Integer.parseInt(numbers[i]);
+        int ans[] = new int[numbers.length-1];
+        for (int i = 0; i < ans.length; i++){
+            ans[i] = Integer.parseInt(numbers[i+1]);
         }
         return ans;
     }

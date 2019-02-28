@@ -1,16 +1,29 @@
+
+/**
+ * Class Factorial calculates the factorial of a given int two different ways: iteratively & recursively.
+ *
+ * @version 1.2 01 Mar 2019
+ * @author Tomer Yona
+ */
 public class Factorial{
 
   public static void main(String[] args) { // class main
      int n = Integer.parseInt(args[0]);
-     System.out.println("iterative: " + factorialIter(n));
      System.out.println("recursive: " + factorialRecursive(n));
+     System.out.println("iterative: " + factorialIter(n));
+
      }
 
 
 
-
-  public static long factorialIter(long n){
+    /**
+     * ...method doSomethingElse documentation comment...
+     * @param n  description
+     * @return long
+     */
+  public static long factorialIter(long n){ //class name
     long ans = 1;
+    //condition
     while(n > 1){
       ans = ans * n;
       n--;
@@ -18,7 +31,11 @@ public class Factorial{
     return ans;
   }
 
-
+    /**
+     * ...method doSomethingElse documentation comment...
+     * @param n description
+     * @return long
+     */
   public static long factorialRecursive(long n){
     long ans = 1;
     if(n==1)
