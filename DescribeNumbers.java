@@ -5,14 +5,23 @@
  * @author Tomer Yona
  */
 
-public class DescribeNumbers{
+public class DescribeNumbers {
 
-  public static void main(String args[]){
+    /**
+     * Short one line description.
+     * <p>
+     * Longer description. If there were any, it would be here.
+     * <p>
+     * And even more explanations to follow in consecutive
+     * paragraphs separated by HTML paragraph breaks.
+     *
+     * @param args Description text text text.*/
+  public static void main(String[] args) {
 
     int[] numbers = stringsToInts(args);
     System.out.println("min: " + min(numbers));
-    System.out.println("max: " +max(numbers));
-    System.out.println("avg: " +avg(numbers));
+    System.out.println("max: " + max(numbers));
+    System.out.println("avg: " + avg(numbers));
 
   }
 
@@ -21,9 +30,9 @@ public class DescribeNumbers{
      * @param numbers  description
      * @return int[]
      */
-    public static int[] stringsToInts(String[] numbers){
-        int ans[] = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++){
+    public static int[] stringsToInts(String[] numbers) {
+        int[] ans = new int [numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
             ans[i] = Integer.parseInt(numbers[i]);
         }
       return ans;
@@ -33,10 +42,10 @@ public class DescribeNumbers{
      * @param numbers  array of ints
      * @return int
      */
-    public static int min(int[] numbers){
+    public static int min(int[] numbers) {
         int min = numbers[0];
-        for (int i = 0; i < numbers.length; i++){
-            if(numbers[i] < min){
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min) {
             min = numbers[i];
             }
         }
@@ -49,10 +58,10 @@ public class DescribeNumbers{
      * @param numbers  array of ints
      * @return int
      */
-    public static int max(int[] numbers){
+    public static int max(int[] numbers) {
         int max = 0;
-        for (int i = 0; i < numbers.length; i++){
-            if(numbers[i] > max){
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
                 max = numbers[i];
             }
         }
@@ -64,12 +73,12 @@ public class DescribeNumbers{
      * @param numbers  array of ints
      * @return int
      */
-    public static float avg(int[] numbers){
+    public static float avg(int[] numbers) {
         int sum = 0;
-        for (int i = 0; i < numbers.length; i++){
+        for (int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
         }
-        return sum/numbers.length;
+        return sum / numbers.length;
     }
 
 
